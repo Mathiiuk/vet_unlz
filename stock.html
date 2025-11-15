@@ -13,11 +13,11 @@
         
         <nav class="sidebar">
             <div class="sidebar-header">
-                <span class="material-icons">pets</span>
+                <img src="logo.png" alt="Logo de VetSafe">
                 <h1>VetSafe</h1>
             </div>
             <ul>
-                <li><a href="index.html">
+                <li><a href="agenda.html">
                     <span class="material-icons">today</span> Agenda / Turnos
                 </a></li>
                 <li><a href="pacientes.html">
@@ -27,6 +27,12 @@
                     <span class="material-icons">inventory_2</span> Stock / Inventario
                 </a></li>
             </ul>
+            <div class="sidebar-footer">
+                <a href="index.html" class="portal-link">
+                   <span class="material-icons">logout</span>
+                   Volver al Portal
+                </a>
+            </div>
             <div class="sidebar-user">
                 <span class="material-icons">account_circle</span>
                 <span>Dra. Maria Gomez</span>
@@ -35,8 +41,13 @@
 
         <main class="main-content">
             <header class="main-header">
-                <h2>Control de Stock - Sucursal C.A.B.A.</h2>
-                <p>Mostrando inventario para la sucursal ID 1.</p>
+                <div class="header-title">
+                    <h2>Control de Stock - Sucursal C.A.B.A.</h2>
+                    <p>Mostrando inventario para la sucursal ID 1.</p>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="material-icons">menu</span>
+                </button>
             </header>
 
             <section class="data-table-container">
@@ -46,8 +57,8 @@
                             <th>ID</th>
                             <th>Insumo</th>
                             <th>Categoría</th>
-                            <th>Stock Actual</th>
-                            <th>Stock Mínimo</th>
+                            <th>Actual</th>
+                            <th>Mínimo</th>
                             <th>Vencimiento</th>
                             <th>Estado</th>
                         </tr>
@@ -93,7 +104,8 @@
                 </table>
             </section>
         </main>
-
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

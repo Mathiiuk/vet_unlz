@@ -1,7 +1,7 @@
 /* ========================
    Configuración Global
    ======================== */
-:root {
+   :root {
     --primary-color: #348239; /* Verde Principal del logo */
     --secondary-color: #235827; /* Verde Oscuro del logo (texto, cabeceras) */
     --accent-color: #53a29a; /* Azul Verdoso del logo (para detalles o resaltados) */
@@ -12,13 +12,11 @@
     --border-color: #d0d0d0; /* Un borde más acorde al nuevo fondo */
     --shadow: 0 4px 12px rgba(0,0,0,0.05);
     
-    /* Colores de estado (adaptados o mantenidos si son estándares) */
     --status-treat: #f39c12; /* Naranja para "En Tratamiento" */
     --status-healthy: #2ecc71; /* Verde para "Saludable/OK" */
     --status-low: #e74c3c; /* Rojo para "Bajo Stock" */
     --status-expired: #95a5a6; /* Gris para "Vencido" */
 
-    /* Colores de tipo de atención (adaptados a la paleta) */
     --type-guardia: #e74c3c; /* Rojo para Guardia */
     --type-consulta: var(--primary-color); /* Usamos el verde principal para consulta */
 }
@@ -46,6 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    transition: transform 0.3s ease-out; /* Añadido para la animación */
 }
 
 .main-content {
@@ -66,8 +65,8 @@ body {
 }
 .sidebar-header .material-icons { font-size: 2.5rem; }
 .sidebar-header h1 { margin: 0; font-size: 1.6rem; }
-.sidebar-header img { /* Nuevo: Estilo para el logo en el sidebar */
-    height: 40px; /* Tamaño del logo en el sidebar */
+.sidebar-header img { 
+    height: 40px; 
     width: auto;
 }
 
@@ -113,6 +112,11 @@ body {
     margin-bottom: 30px;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 20px;
+    /* Añadido para alinear el botón de menú */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 .main-header h2 {
     margin: 0 0 5px 0;
@@ -126,6 +130,24 @@ body {
 }
 
 /* ========================
+   Botón de Menú (Hamburguesa)
+   ======================== */
+.menu-toggle {
+    display: none; /* Oculto en desktop */
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+.menu-toggle .material-icons {
+    font-size: 28px;
+    display: block; /* Arregla alineación */
+}
+
+
+/* ========================
    Botones y Chips
    ======================== */
 .button-primary {
@@ -136,6 +158,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: background-color 0.2s;
+    white-space: nowrap; /* Evita que se rompa en móvil */
 }
 .button-primary:hover { background-color: #2a6a2e; } /* Tono más oscuro al pasar el ratón */
 
@@ -148,6 +171,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s;
+    white-space: nowrap; /* Evita que se rompa en móvil */
 }
 .button-secondary:hover { background-color: var(--bg-color); } /* Fondo claro */
 
@@ -201,7 +225,7 @@ body {
 .search-bar {
     display: flex;
     gap: 10px;
-    margin-top: 15px;
+    margin-bottom: 20px; /* Separado del header */
 }
 .search-bar input {
     flex-grow: 1;
@@ -214,7 +238,9 @@ body {
     background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: var(--shadow);
-    overflow: hidden; /* Para los bordes */
+    overflow: hidden; 
+    /* Esta es la magia para tablas en móvil: */
+    overflow-x: auto;
 }
 .data-table {
     width: 100%;
@@ -224,6 +250,7 @@ body {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid var(--border-color);
+    white-space: nowrap; /* Evita que el texto de la tabla se rompa */
 }
 .data-table th {
     background-color: #fcfcfc; /* Un fondo muy claro para las cabeceras */
@@ -245,6 +272,7 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     color: white;
+    display: inline-block; /* Asegura buen renderizado */
 }
 .status-treatment { background-color: var(--status-treat); }
 .status-healthy { background-color: var(--status-healthy); }
@@ -339,7 +367,9 @@ body {
 .applied-insumos ul { margin: 5px 0; padding-left: 20px; }
 
 
-/* Añadido para el enlace "Volver al Portal" */
+/* ========================
+   Link "Volver al Portal"
+   ======================== */
 .sidebar-footer {
     padding: 10px 20px;
     border-top: 1px solid #3c6e40; /* Tono de verde más oscuro */
@@ -357,4 +387,123 @@ body {
 }
 .portal-link:hover {
     color: white;
+}
+
+
+/* ############################################################### */
+/* ############################################################### */
+/* MEDIA QUERIES PARA RESPONSIVE (MÓVIL)              */
+/* ############################################################### */
+/* ############################################################### */
+
+/* Para tablets y móviles grandes (menos de 992px) */
+@media (max-width: 992px) {
+    
+    .sidebar {
+        position: fixed; /* Lo saca del flujo normal */
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000; /* Se asegura que esté por encima */
+        transform: translateX(-100%); /* Lo oculta fuera de la pantalla */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    }
+    
+    .sidebar.is-open {
+        transform: translateX(0); /* Lo muestra (controlado por JS) */
+    }
+
+    .main-content {
+        padding: 20px; /* Reduce el padding en pantallas más chicas */
+    }
+    
+    .menu-toggle {
+        display: block; /* Muestra el botón de hamburguesa */
+    }
+
+    .main-header h2 {
+        font-size: 1.5rem; /* Achica el título principal */
+    }
+    .main-header p {
+        display: none; /* Oculta el subtítulo en móvil para ahorrar espacio */
+    }
+    .header-title {
+        line-height: 1.2;
+    }
+
+    /* Ajusta la ficha del paciente */
+    .patient-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .patient-header h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Ajusta el historial */
+    .visit-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .visit-type {
+        align-self: flex-start; /* Asegura que la etiqueta no se centre */
+    }
+    .visit-header .material-icons {
+        display: none; /* Oculta el icono grande en móvil */
+    }
+    
+}
+
+
+/* Para móviles pequeños (menos de 768px) */
+@media (max-width: 768px) {
+
+    .main-content {
+        padding: 15px;
+    }
+
+    /* Ajusta las tarjetas de turno */
+    .turno-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .turno-time {
+        width: auto;
+        font-size: 1.2rem;
+        padding: 5px 10px;
+        background-color: var(--bg-color);
+        border-radius: 5px;
+    }
+    .turno-actions {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Ajusta la barra de búsqueda */
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .search-bar button {
+        width: 100%;
+    }
+    
+    /* Ficha de paciente en móvil */
+    .patient-card {
+        padding: 20px;
+    }
+    .patient-details {
+        grid-template-columns: 1fr; /* Apila todos los detalles */
+        gap: 8px;
+    }
+    .owner-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
 }

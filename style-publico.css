@@ -33,13 +33,10 @@ body {
     padding: 30px;
     text-align: center;
 }
-.form-header .main-logo { /* Nuevo estilo para el logo */
-    width: 100px; /* Tamaño del logo en el formulario */
+.form-header .main-logo { 
+    width: 100px; 
     height: auto;
     margin-bottom: 15px;
-}
-.form-header .material-icons { /* Esto ya no se usará directamente */
-    font-size: 3rem;
 }
 .form-header h1 {
     margin: 10px 0 5px 0;
@@ -105,4 +102,22 @@ body {
 }
 .submit-button:hover {
     background-color: #2a6a2e; /* Tono más oscuro al pasar el ratón */
+}
+
+
+/* ========================
+   MEDIA QUERY PARA MÓVIL
+   ======================== */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px; /* Menos padding en móvil */
+    }
+
+    .turno-form {
+        padding: 20px; /* Menos padding en el form */
+    }
+
+    .form-header {
+        padding: 20px;
+    }
 }

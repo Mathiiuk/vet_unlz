@@ -13,7 +13,7 @@
         
         <nav class="sidebar">
             <div class="sidebar-header">
-                <span class="material-icons">pets</span>
+                <img src="logo.png" alt="Logo de VetSafe">
                 <h1>VetSafe</h1>
             </div>
             <ul>
@@ -33,14 +33,12 @@
                     </a>
                 </li>
             </ul>
-
             <div class="sidebar-footer">
                 <a href="index.html" class="portal-link">
                    <span class="material-icons">logout</span>
                    Volver al Portal
                 </a>
            </div>
-
             <div class="sidebar-user">
                 <span class="material-icons">account_circle</span>
                 <span>Dra. Maria Gomez</span>
@@ -49,8 +47,13 @@
 
         <main class="main-content">
             <header class="main-header">
-                <h2>Agenda del Día</h2>
-                <p>Mostrando turnos pendientes para hoy, 17 de Noviembre 2025.</p>
+                <div class="header-title"> 
+                    <h2>Agenda del Día</h2>
+                    <p>Mostrando turnos pendientes para hoy, 17 de Noviembre 2025.</p>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="material-icons">menu</span>
+                </button>
             </header>
 
             <section class="turnos-list">
@@ -96,7 +99,8 @@
 
             </section>
         </main>
-
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
