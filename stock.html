@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock - VetSafe</title>
+    <link rel="stylesheet" href="style-interno.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <span class="material-icons">pets</span>
+                <h1>VetSafe</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">
+                    <span class="material-icons">today</span> Agenda / Turnos
+                </a></li>
+                <li><a href="pacientes.html">
+                    <span class="material-icons">person_search</span> Pacientes
+                </a></li>
+                <li class="active"><a href="stock.html">
+                    <span class="material-icons">inventory_2</span> Stock / Inventario
+                </a></li>
+            </ul>
+            <div class="sidebar-user">
+                <span class="material-icons">account_circle</span>
+                <span>Dra. Maria Gomez</span>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Control de Stock - Sucursal C.A.B.A.</h2>
+                <p>Mostrando inventario para la sucursal ID 1.</p>
+            </header>
+
+            <section class="data-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Insumo</th>
+                            <th>Categoría</th>
+                            <th>Stock Actual</th>
+                            <th>Stock Mínimo</th>
+                            <th>Vencimiento</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>100</td>
+                            <td>Vacuna Sextuple Canina</td>
+                            <td>Vacuna</td>
+                            <td>50</td>
+                            <td>20</td>
+                            <td>01/01/2026</td>
+                            <td><span class="status status-healthy">OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>101</td>
+                            <td>Amoxicilina 500mg</td>
+                            <td>Antibiótico</td>
+                            <td>200</td>
+                            <td>50</td>
+                            <td>01/06/2027</td>
+                            <td><span class="status status-healthy">OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>103</td>
+                            <td>Jeringa 5ml</td>
+                            <td>Material</td>
+                            <td>15</td>
+                            <td>50</td>
+                            <td>01/01/2030</td>
+                            <td><span class="status status-low">¡Bajo Stock!</span></td>
+                        </tr>
+                         <tr>
+                            <td>102</td>
+                            <td>Ketamina</td>
+                            <td>Anestésico</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>01/03/2025</td>
+                            <td><span class="status status-expired">Vencido</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+    </div>
+</body>
+</html>

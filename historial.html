@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial Clínico - VetSafe</title>
+    <link rel="stylesheet" href="style-interno.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <span class="material-icons">pets</span>
+                <h1>VetSafe</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">
+                    <span class="material-icons">today</span> Agenda / Turnos
+                </a></li>
+                <li class="active"><a href="pacientes.html">
+                    <span class="material-icons">person_search</span> Pacientes
+                </a></li>
+                <li><a href="stock.html">
+                    <span class="material-icons">inventory_2</span> Stock / Inventario
+                </a></li>
+            </ul>
+            <div class="sidebar-user">
+                <span class="material-icons">account_circle</span>
+                <span>Dra. Maria Gomez</span>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            
+            <section class="patient-card">
+                <div class="patient-header">
+                    <h2>Luna (ID: 3)</h2>
+                    <span class="status status-treatment">En Tratamiento</span>
+                </div>
+                <div class="patient-details">
+                    <div>
+                        <strong>Especie:</strong> Canino
+                    </div>
+                    <div>
+                        <strong>Raza:</strong> Bulldog Francés
+                    </div>
+                    <div>
+                        <strong>Sexo:</strong> Hembra
+                    </div>
+                    <div>
+                        <strong>Peso:</strong> 8.1 kg
+                    </div>
+                    <div>
+                        <strong>Nacimiento:</strong> 15/11/2021
+                    </div>
+                </div>
+                <div class="owner-details">
+                    <span class="material-icons">person</span>
+                    <strong>Dueño:</strong> Ana Martinez (ID: 2) | <strong>Tel:</strong> 11-5555-1004
+                </div>
+            </section>
+
+            <section class="history-timeline">
+                <h3>Historial de Atenciones</h3>
+
+                <div class="visit-card">
+                    <div class="visit-header">
+                        <span class="material-icons">healing</span>
+                        <div class="visit-title">
+                            <h4>Atención de Guardia (ID At: 2)</h4>
+                            <span class="visit-date">11 de Noviembre 2025 - 15:30 hs</span>
+                        </div>
+                        <span class="visit-type type-guardia">Guardia</span>
+                    </div>
+                    <div class="visit-body">
+                        <div class="visit-section">
+                            <strong>Observaciones de Atención:</strong>
+                            <p>Paciente Luna ingresa por guardia. Vómitos. Posible intoxicación.</p>
+                            <strong>Veterinario:</strong> Dra. Maria Gomez
+                        </div>
+                        
+                        <div class="visit-section treatment-section">
+                            <strong>Tratamiento (ID Tr: 2): Desparasitación</strong>
+                            <p><strong>Observaciones:</strong> Se indica desparasitación interna y dieta blanda.</p>
+                            <p><strong>Próxima Visita:</strong> 18/11/2025</p>
+                            
+                            <div class="applied-insumos">
+                                <strong>Insumos Aplicados:</strong>
+                                <ul>
+                                    <li>Jeringa 5ml (Cantidad: 1)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visit-card">
+                    <div class="visit-header">
+                        <span class="material-icons">check_circle_outline</span>
+                        <div class="visit-title">
+                            <h4>Consulta General (ID At: 1)</h4>
+                            <span class="visit-date">15 de Enero 2025 - 10:00 hs</span>
+                        </div>
+                        <span class="visit-type type-consulta">Consulta</span>
+                    </div>
+                    <div class="visit-body">
+                        <p>Consulta de control anual. Peso estable.</p>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

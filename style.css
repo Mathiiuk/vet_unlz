@@ -1,0 +1,197 @@
+/* ========================
+   Configuración Global
+   ======================== */
+   :root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --shadow: 0 4px 12px rgba(0,0,0,0.05);
+    
+    --status-treat: #f39c12;
+    --status-ok: #2ecc71;
+    --type-guardia: #e74c3c;
+    --type-consulta: #3498db;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* ========================
+   Navbar (Cabecera)
+   ======================== */
+.navbar {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand, .navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-brand h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* ========================
+   Ficha del Paciente
+   ======================== */
+.patient-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.patient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.patient-header h2 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+}
+
+.status-treatment { background-color: var(--status-treat); }
+.status-healthy { background-color: var(--status-ok); }
+
+.patient-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.owner-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-color);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ========================
+   Historial Clínico
+   ======================== */
+.history-timeline h3 {
+    font-size: 1.7rem;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+.visit-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    overflow: hidden; /* Para contener el header */
+}
+
+.visit-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.visit-header .material-icons {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.visit-title {
+    flex-grow: 1;
+}
+
+.visit-title h4 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.visit-date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.visit-type {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+.type-guardia { background-color: var(--type-guardia); }
+.type-consulta { background-color: var(--type-consulta); }
+
+.visit-body {
+    padding: 20px;
+}
+
+.visit-section {
+    margin-bottom: 15px;
+}
+
+.visit-section p {
+    margin: 5px 0;
+}
+
+.treatment-section {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px dashed var(--border-color);
+}
+
+.treatment-section strong {
+    color: var(--primary-color);
+}
+
+.applied-insumos {
+    margin-top: 10px;
+}
+.applied-insumos ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}

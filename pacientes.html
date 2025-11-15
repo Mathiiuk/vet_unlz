@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes - VetSafe</title>
+    <link rel="stylesheet" href="style-interno.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <span class="material-icons">pets</span>
+                <h1>VetSafe</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">
+                    <span class="material-icons">today</span> Agenda / Turnos
+                </a></li>
+                <li class="active"><a href="pacientes.html">
+                    <span class="material-icons">person_search</span> Pacientes
+                </a></li>
+                <li><a href="stock.html">
+                    <span class="material-icons">inventory_2</span> Stock / Inventario
+                </a></li>
+            </ul>
+            <div class="sidebar-user">
+                <span class="material-icons">account_circle</span>
+                <span>Dra. Maria Gomez</span>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Búsqueda de Pacientes</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar por nombre de mascota, dueño o ID...">
+                    <button class="button-primary">Buscar</button>
+                </div>
+            </header>
+
+            <section class="data-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre Paciente</th>
+                            <th>Especie</th>
+                            <th>Raza</th>
+                            <th>Dueño</th>
+                            <th>Teléfono</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Fido</td>
+                            <td>Canino</td>
+                            <td>Labrador</td>
+                            <td>Juan Perez</td>
+                            <td>11-5555-1001</td>
+                            <td><span class="status status-healthy">Saludable</span></td>
+                            <td><a href="#" class="button-secondary">Ver Historial</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Milo</td>
+                            <td>Felino</td>
+                            <td>Siames</td>
+                            <td>Juan Perez</td>
+                            <td>11-5555-1001</td>
+                            <td><span class="status status-healthy">Saludable</span></td>
+                            <td><a href="#" class="button-secondary">Ver Historial</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Luna</td>
+                            <td>Canino</td>
+                            <td>Bulldog Francés</td>
+                            <td>Ana Martinez</td>
+                            <td>11-5555-1004</td>
+                            <td><span class="status status-treatment">En Tratamiento</span></td>
+                            <td><a href="historial.html" class="button-secondary">Ver Historial</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Max</td>
+                            <td>Canino</td>
+                            <td>Golden Retriever</td>
+                            <td>Carlos Sanchez</td>
+                            <td>11-5555-1005</td>
+                            <td><span class="status status-healthy">Saludable</span></td>
+                            <td><a href="#" class="button-secondary">Ver Historial</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+    </div>
+</body>
+</html>

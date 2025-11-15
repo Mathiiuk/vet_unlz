@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Turno - VetSafe</title>
+    <link rel="stylesheet" href="style-publico.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-header">
+            <span class="material-icons">pets</span>
+            <h1>Solicitar Turno</h1>
+            <p>Complete el formulario y nos contactaremos para confirmar.</p>
+        </div>
+
+        <form class="turno-form">
+            
+            <div class="form-section">
+                <h3>Datos del Dueño</h3>
+                <div class="form-group">
+                    <label for="owner-name">Nombre y Apellido</label>
+                    <input type="text" id="owner-name" value="Ana Martinez">
+                </div>
+                <div class="form-group">
+                    <label for="owner-phone">Teléfono de Contacto</label>
+                    <input type="tel" id="owner-phone" value="11-5555-1004">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Datos de la Mascota</h3>
+                <div class="form-group">
+                    <label for="pet-name">Nombre de la Mascota</label>
+                    <input type="text" id="pet-name" value="Luna">
+                </div>
+                <div class="form-group">
+                    <label for="pet-species">Especie</label>
+                    <select id="pet-species">
+                        <option>Canino</option>
+                        <option>Felino</option>
+                        <option>Roedor</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Detalles del Turno</h3>
+                <div class="form-group">
+                    <label for="turno-sucursal">Sucursal de Preferencia</label>
+                    <select id="turno-sucursal">
+                        <option>Sucursal C.A.B.A. (Av. Corrientes 1234)</option>
+                        <option>Sucursal Córdoba (Av. Colón 500)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="turno-tipo">Motivo de la visita</label>
+                    <select id="turno-tipo">
+                        <option>Consulta General</option>
+                        <option>Vacunación</option>
+                        <option>Guardia / Urgencia</option>
+                        <option>Cirugía</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="turno-obs">Describa brevemente el motivo</label>
+                    <textarea id="turno-obs" rows="3">Luna no come y tiene vómitos (ya la atendieron por guardia).</textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">
+                Enviar Solicitud
+            </button>
+
+        </form>
+    </div>
+
+</body>
+</html>

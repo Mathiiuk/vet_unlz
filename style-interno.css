@@ -1,0 +1,352 @@
+/* ========================
+   Configuración Global
+   ======================== */
+   :root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --text-light: #666;
+    --border-color: #e0e0e0;
+    --shadow: 0 4px 12px rgba(0,0,0,0.05);
+    
+    --status-treat: #f39c12;
+    --status-healthy: #2ecc71;
+    --status-low: #e74c3c;
+    --status-expired: #95a5a6;
+
+    --type-guardia: #e74c3c;
+    --type-consulta: #3498db;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ========================
+   Layout Principal
+   ======================== */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--secondary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* ========================
+   Barra Lateral (Sidebar)
+   ======================== */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 25px 20px;
+    border-bottom: 1px solid #3b4c5c;
+}
+.sidebar-header .material-icons { font-size: 2.5rem; }
+.sidebar-header h1 { margin: 0; font-size: 1.6rem; }
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    color: #bdc3c7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+.sidebar li a:hover {
+    background-color: #34495e;
+    color: white;
+}
+.sidebar li.active a {
+    background-color: #34495e;
+    color: white;
+    border-left-color: var(--primary-color);
+}
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid #3b4c5c;
+}
+
+/* ========================
+   Cabecera del Contenido
+   ======================== */
+.main-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+.main-header h2 {
+    margin: 0 0 5px 0;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+.main-header p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* ========================
+   Botones y Chips
+   ======================== */
+.button-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+.button-primary:hover { background-color: #2980b9; }
+
+.button-secondary {
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.button-secondary:hover { background-color: #f4f7f6; }
+
+.chip {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* ========================
+   Tarjetas de Turno (index.html)
+   ======================== */
+.turnos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.turno-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+.turno-time {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    width: 100px;
+    flex-shrink: 0;
+}
+.turno-info {
+    flex-grow: 1;
+}
+.turno-info h4 { margin: 0 0 5px 0; font-size: 1.2rem; }
+.turno-info p { margin: 0; color: var(--text-light); }
+.turno-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ========================
+   Tabla de Datos (pacientes.html, stock.html)
+   ======================== */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+.data-table-container {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden; /* Para los bordes */
+}
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data-table th, .data-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.data-table th {
+    background-color: #f9fafb;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+.data-table tr:last-child td {
+    border-bottom: 0;
+}
+.data-table tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Estados (En tablas y tarjetas) */
+.status {
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+}
+.status-treatment { background-color: var(--status-treat); }
+.status-healthy { background-color: var(--status-healthy); }
+.status-low { background-color: var(--status-low); }
+.status-expired { background-color: var(--status-expired); color: var(--text-color);}
+
+
+/* ========================
+   Ficha Paciente (historial.html)
+   ======================== */
+.patient-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+    margin-bottom: 30px;
+}
+.patient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.patient-header h2 { margin: 0; color: var(--primary-color); font-size: 2rem; }
+.patient-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.owner-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-color);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ========================
+   Timeline (historial.html)
+   ======================== */
+.history-timeline h3 {
+    font-size: 1.7rem;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+.visit-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.visit-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-bottom: 1px solid var(--border-color);
+}
+.visit-header .material-icons { font-size: 2.5rem; color: var(--secondary-color); }
+.visit-title { flex-grow: 1; }
+.visit-title h4 { margin: 0; font-size: 1.3rem; }
+.visit-date { font-size: 0.9rem; color: #666; }
+.visit-type {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+.type-guardia { background-color: var(--type-guardia); }
+.type-consulta { background-color: var(--type-consulta); }
+.visit-body { padding: 20px; }
+.visit-section { margin-bottom: 15px; }
+.visit-section p { margin: 5px 0; }
+.treatment-section {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px dashed var(--border-color);
+}
+.treatment-section strong { color: var(--primary-color); }
+.applied-insumos { margin-top: 10px; }
+.applied-insumos ul { margin: 5px 0; padding-left: 20px; }
+/* Añade esto al final de style-interno.css */
+
+.sidebar-footer {
+    padding: 10px 20px;
+    border-top: 1px solid #3b4c5c;
+}
+
+.portal-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    color: #bdc3c7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+.portal-link:hover {
+    color: white;
+}

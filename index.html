@@ -3,51 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinaria PetCare - Inicio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bienvenido a VetSafe</title>
+    <link rel="stylesheet" href="style-portal.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Veterinaria PetCare</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="login.html">Login</a>
-        </nav>
-    </header>
-    <main style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);">
-        <section class="hero" style="text-align: center; max-width: 800px; padding: 2rem;">
-            <h2 style="font-size: 3rem; color: var(--accent);">Cuidado Profesional para Tus Mascotas</h2>
-            <p style="font-size: 1.2rem; margin: 1rem 0;">En Veterinaria PetCare, ofrecemos servicios integrales para perros, gatos y más. ¡Tu mascota es nuestra prioridad!</p>
-            <a href="login.html" style="display: inline-block; padding: 1rem 2rem; background: var(--accent); color: white; border-radius: 12px; text-decoration: none; font-weight: bold;">Accede al Dashboard</a>
-        </section>
-        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; width: 100%; padding: 2rem;">
-            <div class="card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 20px var(--shadow); text-align: center;">
-                <h3 style="color: var(--accent);">Consultas Veterinarias</h3>
-                <p>Chequeos regulares y tratamientos personalizados. Datos ficticios: Atendemos a 500 mascotas al mes.</p>
-            </div>
-            <div class="card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 20px var(--shadow); text-align: center;">
-                <h3 style="color: var(--accent);">Vacunación</h3>
-                <p>Protege a tu mascota contra enfermedades. Ficticio: Vacunas para rabia, parvovirus y más.</p>
-            </div>
-            <div class="card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 20px var(--shadow); text-align: center;">
-                <h3 style="color: var(--accent);">Emergencias 24/7</h3>
-                <p>Atención inmediata en cualquier momento. Ficticio: Respuesta en menos de 30 minutos.</p>
-            </div>
-        </section>
-        <section style="max-width: 1200px; width: 100%; padding: 2rem;">
-            <h2 style="text-align: center; color: var(--accent);">Testimonios Ficticios</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <blockquote style="background: var(--secondary-bg); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent-secondary);">
-                    "Excelente servicio, mi perro Max se recuperó rápido. ¡Recomiendo!" - Ana García (Cliente ficticio)
-                </blockquote>
-                <blockquote style="background: var(--secondary-bg); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent-secondary);">
-                    "Profesionales y amables. Atendieron a mi gato Luna en emergencias." - Carlos López (Cliente ficticio)
-                </blockquote>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Veterinaria PetCare. Maqueta Universitaria - Todos los derechos reservados.</p>
-    </footer>
+
+    <div class="portal-container">
+        <header class="portal-header">
+            <span class="material-icons">pets</span>
+            <h1>Bienvenido a VetSafe</h1>
+            <p>Por favor, selecciona tu punto de acceso.</p>
+        </header>
+
+        <div class="choice-wrapper">
+
+            <a href="agenda.html" class="choice-card">
+                <span class="material-icons">admin_panel_settings</span>
+                <h2>Panel Interno</h2>
+                <p>Acceder como veterinario o administrador para gestionar turnos, pacientes y stock.</p>
+            </a>
+
+            <a href="turno-publico.html" class="choice-card">
+                <span class="material-icons">event</span>
+                <h2>Sitio Público</h2>
+                <p>Acceder como cliente para solicitar un nuevo turno para tu mascota.</p>
+            </a>
+
+        </div>
+    </div>
+
 </body>
 </html>
