@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #3498db;
-    --bg-color: #f4f7f6;
+    --primary-color: #348239; /* Verde Principal del logo */
+    --bg-color: #ecebe6; /* Color de fondo del logo */
     --card-bg: #ffffff;
     --text-color: #333;
     --border-color: #ccc;
@@ -28,12 +28,17 @@ body {
 }
 
 .form-header {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Verde Principal del logo */
     color: white;
     padding: 30px;
     text-align: center;
 }
-.form-header .material-icons {
+.form-header .main-logo { /* Nuevo estilo para el logo */
+    width: 100px; /* Tamaño del logo en el formulario */
+    height: auto;
+    margin-bottom: 15px;
+}
+.form-header .material-icons { /* Esto ya no se usará directamente */
     font-size: 3rem;
 }
 .form-header h1 {
@@ -59,7 +64,7 @@ body {
 }
 .form-section h3 {
     margin: 0 0 15px 0;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Verde Principal del logo */
     font-size: 1.2rem;
 }
 
@@ -88,7 +93,7 @@ body {
 
 .submit-button {
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Verde Principal del logo */
     color: white;
     padding: 15px;
     border: none;
@@ -99,5 +104,5 @@ body {
     transition: background-color 0.2s;
 }
 .submit-button:hover {
-    background-color: #2980b9;
+    background-color: #2a6a2e; /* Tono más oscuro al pasar el ratón */
 }

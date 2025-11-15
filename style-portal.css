@@ -1,7 +1,8 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --bg-color: #f4f7f6;
+    --primary-color: #348239; /* Verde Principal del logo */
+    --secondary-color: #235827; /* Verde Oscuro del logo (texto, acentos) */
+    --accent-color: #53a29a; /* Azul Verdoso del logo */
+    --bg-color: #ecebe6; /* Color de fondo del logo */
     --card-bg: #ffffff;
     --text-color: #333;
     --text-light: #666;
@@ -29,14 +30,20 @@ body {
     margin-bottom: 40px;
 }
 
-.portal-header .material-icons {
+.portal-header .main-logo { /* Nuevo estilo para el logo */
+    width: 150px; /* Tamaño del logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.portal-header .material-icons { /* Esto ya no se usará directamente para el logo principal */
     font-size: 4rem;
     color: var(--primary-color);
 }
 
 .portal-header h1 {
     font-size: 2.5rem;
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Usamos el verde oscuro para el título */
     margin: 10px 0;
 }
 

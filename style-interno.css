@@ -1,23 +1,26 @@
 /* ========================
    Configuración Global
    ======================== */
-   :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --bg-color: #f4f7f6;
+:root {
+    --primary-color: #348239; /* Verde Principal del logo */
+    --secondary-color: #235827; /* Verde Oscuro del logo (texto, cabeceras) */
+    --accent-color: #53a29a; /* Azul Verdoso del logo (para detalles o resaltados) */
+    --bg-color: #ecebe6; /* Color de fondo del logo */
     --card-bg: #ffffff;
     --text-color: #333;
     --text-light: #666;
-    --border-color: #e0e0e0;
+    --border-color: #d0d0d0; /* Un borde más acorde al nuevo fondo */
     --shadow: 0 4px 12px rgba(0,0,0,0.05);
     
-    --status-treat: #f39c12;
-    --status-healthy: #2ecc71;
-    --status-low: #e74c3c;
-    --status-expired: #95a5a6;
+    /* Colores de estado (adaptados o mantenidos si son estándares) */
+    --status-treat: #f39c12; /* Naranja para "En Tratamiento" */
+    --status-healthy: #2ecc71; /* Verde para "Saludable/OK" */
+    --status-low: #e74c3c; /* Rojo para "Bajo Stock" */
+    --status-expired: #95a5a6; /* Gris para "Vencido" */
 
-    --type-guardia: #e74c3c;
-    --type-consulta: #3498db;
+    /* Colores de tipo de atención (adaptados a la paleta) */
+    --type-guardia: #e74c3c; /* Rojo para Guardia */
+    --type-consulta: var(--primary-color); /* Usamos el verde principal para consulta */
 }
 
 body {
@@ -38,7 +41,7 @@ body {
 
 .sidebar {
     width: 260px;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Verde Oscuro del logo */
     color: white;
     display: flex;
     flex-direction: column;
@@ -59,10 +62,14 @@ body {
     align-items: center;
     gap: 10px;
     padding: 25px 20px;
-    border-bottom: 1px solid #3b4c5c;
+    border-bottom: 1px solid #3c6e40; /* Tono de verde más oscuro */
 }
 .sidebar-header .material-icons { font-size: 2.5rem; }
 .sidebar-header h1 { margin: 0; font-size: 1.6rem; }
+.sidebar-header img { /* Nuevo: Estilo para el logo en el sidebar */
+    height: 40px; /* Tamaño del logo en el sidebar */
+    width: auto;
+}
 
 .sidebar ul {
     list-style: none;
@@ -76,27 +83,27 @@ body {
     align-items: center;
     gap: 15px;
     padding: 15px 20px;
-    color: #bdc3c7;
+    color: #c0c7c0; /* Tono de gris/verde claro */
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
     border-left: 4px solid transparent;
 }
 .sidebar li a:hover {
-    background-color: #34495e;
+    background-color: #2b612e; /* Verde más oscuro al pasar el ratón */
     color: white;
 }
 .sidebar li.active a {
-    background-color: #34495e;
+    background-color: #2b612e; /* Verde más oscuro para activo */
     color: white;
-    border-left-color: var(--primary-color);
+    border-left-color: var(--primary-color); /* Verde principal del logo */
 }
 .sidebar-user {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 20px;
-    border-top: 1px solid #3b4c5c;
+    border-top: 1px solid #3c6e40; /* Tono de verde más oscuro */
 }
 
 /* ========================
@@ -110,7 +117,7 @@ body {
 .main-header h2 {
     margin: 0 0 5px 0;
     font-size: 2rem;
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Verde Oscuro del logo */
 }
 .main-header p {
     margin: 0;
@@ -122,7 +129,7 @@ body {
    Botones y Chips
    ======================== */
 .button-primary {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Verde Principal del logo */
     color: white;
     padding: 8px 15px;
     border-radius: 5px;
@@ -130,11 +137,11 @@ body {
     font-weight: 500;
     transition: background-color 0.2s;
 }
-.button-primary:hover { background-color: #2980b9; }
+.button-primary:hover { background-color: #2a6a2e; } /* Tono más oscuro al pasar el ratón */
 
 .button-secondary {
     background-color: var(--card-bg);
-    color: var(--primary-color);
+    color: var(--primary-color); /* Verde Principal del logo */
     border: 1px solid var(--primary-color);
     padding: 6px 12px;
     border-radius: 5px;
@@ -142,7 +149,7 @@ body {
     font-weight: 500;
     transition: all 0.2s;
 }
-.button-secondary:hover { background-color: #f4f7f6; }
+.button-secondary:hover { background-color: var(--bg-color); } /* Fondo claro */
 
 .chip {
     background-color: var(--bg-color);
@@ -154,7 +161,7 @@ body {
 }
 
 /* ========================
-   Tarjetas de Turno (index.html)
+   Tarjetas de Turno (agenda.html)
    ======================== */
 .turnos-list {
     display: flex;
@@ -173,7 +180,7 @@ body {
 .turno-time {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Verde Principal del logo */
     width: 100px;
     flex-shrink: 0;
 }
@@ -219,7 +226,7 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 .data-table th {
-    background-color: #f9fafb;
+    background-color: #fcfcfc; /* Un fondo muy claro para las cabeceras */
     font-size: 0.9rem;
     color: var(--text-light);
     text-transform: uppercase;
@@ -228,7 +235,7 @@ body {
     border-bottom: 0;
 }
 .data-table tr:hover {
-    background-color: #f9fafb;
+    background-color: #f9f9f9;
 }
 
 /* Estados (En tablas y tarjetas) */
@@ -253,7 +260,7 @@ body {
     border-radius: 10px;
     padding: 25px;
     box-shadow: var(--shadow);
-    border-left: 5px solid var(--primary-color);
+    border-left: 5px solid var(--primary-color); /* Verde Principal del logo */
     margin-bottom: 30px;
 }
 .patient-header {
@@ -264,7 +271,7 @@ body {
     padding-bottom: 15px;
     margin-bottom: 20px;
 }
-.patient-header h2 { margin: 0; color: var(--primary-color); font-size: 2rem; }
+.patient-header h2 { margin: 0; color: var(--primary-color); font-size: 2rem; } /* Verde Principal */
 .patient-details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -275,7 +282,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color); /* Fondo claro */
     padding: 12px 15px;
     border-radius: 8px;
     font-weight: 500;
@@ -286,8 +293,8 @@ body {
    ======================== */
 .history-timeline h3 {
     font-size: 1.7rem;
-    color: var(--secondary-color);
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--secondary-color); /* Verde Oscuro */
+    border-bottom: 2px solid var(--primary-color); /* Verde Principal */
     padding-bottom: 5px;
 }
 .visit-card {
@@ -305,7 +312,7 @@ body {
     background-color: #fdfdfd;
     border-bottom: 1px solid var(--border-color);
 }
-.visit-header .material-icons { font-size: 2.5rem; color: var(--secondary-color); }
+.visit-header .material-icons { font-size: 2.5rem; color: var(--secondary-color); } /* Verde Oscuro */
 .visit-title { flex-grow: 1; }
 .visit-title h4 { margin: 0; font-size: 1.3rem; }
 .visit-date { font-size: 0.9rem; color: #666; }
@@ -322,19 +329,20 @@ body {
 .visit-section { margin-bottom: 15px; }
 .visit-section p { margin: 5px 0; }
 .treatment-section {
-    background-color: var(--bg-color);
+    background-color: var(--bg-color); /* Fondo claro */
     border-radius: 8px;
     padding: 15px;
     border: 1px dashed var(--border-color);
 }
-.treatment-section strong { color: var(--primary-color); }
+.treatment-section strong { color: var(--primary-color); } /* Verde Principal */
 .applied-insumos { margin-top: 10px; }
 .applied-insumos ul { margin: 5px 0; padding-left: 20px; }
-/* Añade esto al final de style-interno.css */
 
+
+/* Añadido para el enlace "Volver al Portal" */
 .sidebar-footer {
     padding: 10px 20px;
-    border-top: 1px solid #3b4c5c;
+    border-top: 1px solid #3c6e40; /* Tono de verde más oscuro */
 }
 
 .portal-link {
@@ -342,7 +350,7 @@ body {
     align-items: center;
     gap: 15px;
     padding: 10px 0;
-    color: #bdc3c7;
+    color: #c0c7c0; /* Tono de gris/verde claro */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
