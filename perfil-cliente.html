@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - VetSafe</title>
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style-cliente.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="Logo VetSafe" class="sidebar-logo">
+                <span class="sidebar-title">VetSafe</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li> 
+                    <a href="dashboard-cliente.html">
+                        <span class="material-icons">dashboard</span> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="solicitar-turno.html">
+                        <span class="material-icons">event_available</span> Solicitar Turno
+                    </a>
+                </li>
+            </ul>
+            
+            <ul class="sidebar-menu-bottom">
+                <li class="active">
+                    <a href="perfil-cliente.html">
+                        <span class="material-icons">person</span> Ana Martinez
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="portal-link">
+                        <span class="material-icons">logout</span> Salir
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-title"> 
+                    <h2>Mi Perfil y Mascotas</h2>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="material-icons">menu</span>
+                </button>
+            </header>
+
+            <div class="profile-layout">
+
+                <div class="form-container">
+                    <form class="turno-form">
+                        <div class="form-section">
+                            <h3>Mis Datos Personales</h3>
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" value="Ana">
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" id="apellido" value="Martinez">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" value="11-5555-1004">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="ana.martinez@email.com" readonly>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-button">Actualizar Perfil</button>
+                    </form>
+                </div>
+
+                <div class="form-container">
+                    <form class="turno-form">
+                        <div class="form-section">
+                            <h3>Agregar Nueva Mascota</h3>
+                            <div class="form-group">
+                                <label for="pet-nombre">Nombre de la Mascota</label>
+                                <input type="text" id="pet-nombre" placeholder="Ej: Rocket">
+                            </div>
+                            <div class="form-group">
+                                <label for="pet-especie">Especie</label>
+                                <select id="pet-especie">
+                                    <option value="" disabled selected>Seleccione...</option>
+                                    <option value="1">Canino</option>
+                                    <option value="2">Felino</option>
+                                    <option value="3">Roedor</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pet-raza">Raza</label>
+                                <input type="text" id="pet-raza" placeholder="Ej: Mestizo, Labrador, etc.">
+                            </div>
+                            <div class="form-group">
+                                <label for="pet-genero">Sexo</label>
+                                <select id="pet-genero">
+                                    <option value="" disabled selected>Seleccione...</option>
+                                    <option value="1">Macho</option>
+                                    <option value="2">Hembra</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pet-nacimiento">Fecha de Nacimiento (Aprox.)</label>
+                                <input type="date" id="pet-nacimiento">
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-button">Agregar Mascota</button>
+                    </form>
+                </div>
+
+            </div> </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

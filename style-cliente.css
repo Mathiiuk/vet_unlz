@@ -1,22 +1,29 @@
 /* =================================================== */
-/* CSS General del Portal de Cliente (style-cliente.css) */
+/* CSS del Portal de Cliente (Diseño Híbrido/Moderno) */
 /* =================================================== */
 
 /* ========================
-   Variables de Color
+   Variables de Color (Paleta Moderna + Sidebar Oscuro)
    ======================== */
    :root {
-    --primary-color: #348239; /* Verde Principal */
-    --secondary-color: #235827; /* Verde Oscuro */
-    --accent-color: #53a29a; /* Azul Verdoso */
-    --bg-color: #ecebe6; /* Fondo claro */
-    --card-bg: #ffffff;
-    --text-color: #333;
-    --text-light: #666;
-    --border-color: #d0d0d0;
+    /* Colores primarios (del logo) */
+    --primary-color: #348239;
+    --primary-color-dark: #233B36;
+
+    /* Paleta de Interfaz (UI) */
+    --bg-color: #ecebe6; /* Color de fondo del logo */
+    --card-bg: #ffffff; /* Blanco puro para tarjetas */
+    
+    /* Paleta de Texto */
+    --text-color-dark: #233B36; /* Verde oscuro para títulos */
+    --text-color: #444444; /* Gris oscuro para texto normal */
+    --text-color-light: #7a7a7a; /* Gris claro para subtexto/labels */
+
+    /* Colores de Borde y Sombra */
+    --border-color: #e0e0e0;
     --shadow: 0 4px 12px rgba(0,0,0,0.05);
 
-    /* Colores del Sidebar (de la imagen) */
+    /* --- Variables del Sidebar Oscuro (de la imagen) --- */
     --sidebar-bg: #233B36; /* Verde oscuro de la imagen */
     --sidebar-text-logo: #9EF0D6; /* Verde claro del texto "VetSafe" */
     --sidebar-text-link: #EAEAEA; /* Texto de enlace normal */
@@ -27,8 +34,6 @@
     /* Colores de Estado */
     --status-treat: #f39c12; 
     --status-healthy: #2ecc71;
-    --status-low: #e74c3c;
-    --status-expired: #95a5a6;
     --status-pending: #3498db; 
 }
 
@@ -56,11 +61,12 @@ body {
 .login-container {
     background-color: var(--card-bg);
     padding: 40px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
     text-align: center;
     max-width: 400px;
     width: 90%;
+    border: 1px solid var(--border-color);
 }
 
 .login-logo {
@@ -69,7 +75,7 @@ body {
 }
 
 .login-container h2 {
-    color: var(--secondary-color);
+    color: var(--text-color-dark);
     margin-top: 0;
 }
 
@@ -78,10 +84,15 @@ body {
     text-align: left;
 }
 
-.login-form label {
+/* Estilo de formulario SaaS moderno */
+.login-form label,
+.form-group label {
     display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-color-light);
+    margin-bottom: 8px;
+    text-transform: uppercase;
 }
 
 .login-form input[type="email"],
@@ -90,8 +101,9 @@ body {
     padding: 12px 15px;
     font-size: 1rem;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px;
     box-sizing: border-box; 
+    background-color: var(--bg-color); /* Fondo del input coincide con el body */
 }
 
 .login-form .button-primary {
@@ -102,7 +114,7 @@ body {
     color: white;
     padding: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
@@ -110,13 +122,13 @@ body {
     margin-top: 20px;
 }
 .login-form .button-primary:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color-dark);
 }
 
 .back-link {
     display: block;
     margin-top: 20px;
-    color: var(--text-light);
+    color: var(--text-color-light);
     font-size: 0.9rem;
 }
 
@@ -133,14 +145,15 @@ body {
     flex-grow: 1;
     padding: 30px;
     overflow-y: auto;
+    background-color: var(--bg-color); /* Fondo principal claro */
 }
 
 /* ========================
-   Sidebar (Estilo de la imagen)
+   Sidebar (¡Diseño Oscuro de la Imagen!)
    ======================== */
 .sidebar {
     width: 260px;
-    background-color: var(--sidebar-bg);
+    background-color: var(--sidebar-bg); /* Verde Oscuro de la imagen */
     color: var(--sidebar-text-link);
     display: flex;
     flex-direction: column;
@@ -166,7 +179,7 @@ body {
     margin: 0; 
     font-size: 1.8rem; 
     font-weight: 700;
-    color: var(--sidebar-text-logo); 
+    color: var(--sidebar-text-logo); /* Verde claro del logo */
     text-shadow: 0 0 10px rgba(158, 240, 214, 0.4);
 }
 
@@ -208,10 +221,12 @@ body {
     color: var(--sidebar-text-active);
 }
 
-.sidebar-menu li.active a {
+/* Link ACTIVO (Oscuro) */
+.sidebar-menu li.active a,
+.sidebar-menu-bottom li.active a {
     background-color: var(--sidebar-active-bg); 
     color: var(--sidebar-text-active);
-    border-left-color: var(--sidebar-text-logo);
+    border-left-color: var(--sidebar-text-logo); /* Borde verde claro */
     font-weight: 600;
 }
 
@@ -235,11 +250,11 @@ body {
 .main-header h2 {
     margin: 0 0 5px 0;
     font-size: 2rem;
-    color: var(--secondary-color);
+    color: var(--text-color-dark);
 }
 .main-header p {
     margin: 0;
-    color: var(--text-light);
+    color: var(--text-color-light);
     font-size: 1.1rem;
 }
 
@@ -250,7 +265,7 @@ body {
     border-radius: 8px;
     padding: 8px;
     cursor: pointer;
-    color: var(--secondary-color);
+    color: var(--text-color-dark);
 }
 .menu-toggle .material-icons {
     font-size: 28px;
@@ -258,25 +273,30 @@ body {
 }
 
 /* ========================
-   Dashboard de Cliente (dashboard-cliente.html)
+   Tarjetas (Dashboard y Perfil) - Estilo Moderno
    ======================== */
+.pet-card,
+.turno-card,
+.form-container {
+    background-color: var(--card-bg);
+    border-radius: 12px; /* Esquinas redondeadas */
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+}
+
 .patient-card-list h3,
 .turnos-list h3 {
     font-size: 1.7rem;
-    color: var(--secondary-color);
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--text-color-dark);
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
 
 .pet-card {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
     margin-bottom: 15px;
 }
 .pet-info h4 {
@@ -286,7 +306,7 @@ body {
 }
 .pet-info p {
     margin: 0;
-    color: var(--text-light);
+    color: var(--text-color-light);
 }
 
 .status {
@@ -315,9 +335,6 @@ body {
     margin-top: 30px;
 }
 .turno-card {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
     display: flex;
     align-items: center;
     padding: 20px;
@@ -337,21 +354,18 @@ body {
 }
 .turno-info { flex-grow: 1; }
 .turno-info h4 { margin: 0 0 5px 0; font-size: 1.2rem; }
-.turno-info p { margin: 0; color: var(--text-light); }
+.turno-info p { margin: 0; color: var(--text-color-light); }
 .turno-actions { display: flex; align-items: center; gap: 15px; }
 
 /* ========================
-   Formulario de Turno (solicitar-turno.html)
+   Formulario de Turno y Perfil (Estilo Moderno)
    ======================== */
 .form-container {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
     padding: 30px;
 }
 .form-section h3 {
     margin: 0 0 20px 0;
-    color: var(--secondary-color);
+    color: var(--text-color-dark);
     font-size: 1.2rem;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
@@ -359,43 +373,52 @@ body {
 .form-group {
     margin-bottom: 20px;
 }
-.form-group label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 8px;
-}
 .form-group input[type="text"],
 .form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="date"],
 .form-group select,
 .form-group textarea {
     width: 100%;
     padding: 12px 15px;
     font-size: 1rem;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px;
     box-sizing: border-box; 
-    background-color: #fdfdfd;
+    background-color: var(--bg-color); /* Input coincide con el fondo */
+}
+.form-group input[readonly] {
+    background-color: #eee;
+    color: #888;
 }
 .form-group textarea {
     resize: vertical;
 }
 
 .submit-button {
-    width: 100%;
+    width: auto; /* El botón ya no ocupa el 100% */
     background-color: var(--primary-color);
     color: white;
-    padding: 15px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
+    border-radius: 8px;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 .submit-button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color-dark);
 }
 
+/* ========================
+   Layout de Perfil (dos columnas)
+   ======================== */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 30px;
+}
 
 /* ========================
    Media Queries (Móvil)
@@ -428,6 +451,10 @@ body {
     .header-title {
         line-height: 1.2;
     }
+    .profile-layout {
+        grid-template-columns: 1fr; /* Apila los formularios en tablets */
+        gap: 25px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -444,6 +471,7 @@ body {
     }
     .turno-time {
         width: 100%;
+        text-align: left;
     }
     .turno-actions {
         width: 100%;
@@ -455,5 +483,8 @@ body {
     }
     .form-container {
         padding: 20px;
+    }
+    .submit-button {
+        width: 100%; /* El botón vuelve a ser 100% en móvil */
     }
 }
