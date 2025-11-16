@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - VetSafe</title>
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style-cliente.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="Logo VetSafe" class="sidebar-logo">
+                <span class="sidebar-title">VetSafe</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="active"> 
+                    <a href="dashboard-cliente.html">
+                        <span class="material-icons">dashboard</span> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="solicitar-turno.html">
+                        <span class="material-icons">event_available</span> Solicitar Turno
+                    </a>
+                </li>
+            </ul>
+            
+            <ul class="sidebar-menu-bottom">
+                <li>
+                    <a href="#"> <span class="material-icons">person</span> Ana Martinez
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="portal-link">
+                        <span class="material-icons">logout</span> Salir
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-title"> 
+                    <h2>¡Hola, Ana!</h2>
+                    <p>Bienvenida a tu portal de VetSafe.</p>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="material-icons">menu</span>
+                </button>
+            </header>
+
+            <section class="patient-card-list">
+                <h3>Mis Mascotas</h3>
+                <div class="pet-card">
+                    <div class="pet-info">
+                        <h4>Luna (ID: 3)</h4>
+                        <p>Canino - Bulldog Francés - Hembra</p>
+                    </div>
+                    <span class="status status-treatment">En Tratamiento</span>
+                </div>
+                
+                <div class="pet-card">
+                    <div class="pet-info">
+                        <h4>Fido (ID: 1) - (Simulado)</h4>
+                        <p>Canino - Labrador - Macho</p>
+                    </div>
+                    <span class="status status-healthy">Saludable</span>
+                </div>
+            </section>
+
+            <section class="turnos-list">
+                <h3>Mis Próximos Turnos</h3>
+                <div class="turno-card">
+                    <div class="turno-time">17 NOV<br>09:00 hs</div>
+                    <div class="turno-info">
+                        <h4>Turno para: Luna</h4>
+                        <p>Motivo: <strong>Consulta General</strong> (ID Turno: 2)</p>
+                        <p>Con: Dra. Maria Gomez</p>
+                    </div>
+                    <div class="turno-actions">
+                        <span class="chip chip-pending">Pendiente</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

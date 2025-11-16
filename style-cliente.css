@@ -1,0 +1,459 @@
+/* =================================================== */
+/* CSS General del Portal de Cliente (style-cliente.css) */
+/* =================================================== */
+
+/* ========================
+   Variables de Color
+   ======================== */
+   :root {
+    --primary-color: #348239; /* Verde Principal */
+    --secondary-color: #235827; /* Verde Oscuro */
+    --accent-color: #53a29a; /* Azul Verdoso */
+    --bg-color: #ecebe6; /* Fondo claro */
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --text-light: #666;
+    --border-color: #d0d0d0;
+    --shadow: 0 4px 12px rgba(0,0,0,0.05);
+
+    /* Colores del Sidebar (de la imagen) */
+    --sidebar-bg: #233B36; /* Verde oscuro de la imagen */
+    --sidebar-text-logo: #9EF0D6; /* Verde claro del texto "VetSafe" */
+    --sidebar-text-link: #EAEAEA; /* Texto de enlace normal */
+    --sidebar-text-active: #FFFFFF; /* Texto de enlace activo */
+    --sidebar-active-bg: #3F635B; /* Fondo del enlace activo */
+    --sidebar-border: #3F635B; /* Borde separador */
+
+    /* Colores de Estado */
+    --status-treat: #f39c12; 
+    --status-healthy: #2ecc71;
+    --status-low: #e74c3c;
+    --status-expired: #95a5a6;
+    --status-pending: #3498db; 
+}
+
+/* ========================
+   Estilos Globales
+   ======================== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ========================
+   Estilos de Login (login-cliente.html)
+   ======================== */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.login-logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.login-container h2 {
+    color: var(--secondary-color);
+    margin-top: 0;
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.login-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+.login-form .button-primary {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+}
+.login-form .button-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+
+/* ========================
+   Layout del Dashboard
+   ======================== */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* ========================
+   Sidebar (Estilo de la imagen)
+   ======================== */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text-link);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-out; 
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 25px 20px;
+    border-bottom: 1px solid var(--sidebar-border); 
+}
+
+.sidebar-logo { 
+    height: 40px; 
+    width: 40px; 
+    object-fit: contain;
+}
+
+.sidebar-title { 
+    margin: 0; 
+    font-size: 1.8rem; 
+    font-weight: 700;
+    color: var(--sidebar-text-logo); 
+    text-shadow: 0 0 10px rgba(158, 240, 214, 0.4);
+}
+
+.sidebar-menu,
+.sidebar-menu-bottom {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu {
+    padding-top: 15px;
+}
+
+.sidebar-menu-bottom {
+    margin-top: auto; 
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--sidebar-border);
+}
+
+.sidebar-menu li a,
+.sidebar-menu-bottom li a {
+    display: flex;
+    align-items: center;
+    gap: 16px; 
+    padding: 16px 20px;
+    color: var(--sidebar-text-link); 
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu-bottom li a:hover {
+    background-color: var(--sidebar-active-bg); 
+    color: var(--sidebar-text-active);
+}
+
+.sidebar-menu li.active a {
+    background-color: var(--sidebar-active-bg); 
+    color: var(--sidebar-text-active);
+    border-left-color: var(--sidebar-text-logo);
+    font-weight: 600;
+}
+
+.sidebar .material-icons {
+    font-size: 24px;
+    width: 24px;
+}
+
+/* ========================
+   Cabecera del Contenido
+   ======================== */
+.main-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.main-header h2 {
+    margin: 0 0 5px 0;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+.main-header p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.menu-toggle {
+    display: none; 
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+.menu-toggle .material-icons {
+    font-size: 28px;
+    display: block; 
+}
+
+/* ========================
+   Dashboard de Cliente (dashboard-cliente.html)
+   ======================== */
+.patient-card-list h3,
+.turnos-list h3 {
+    font-size: 1.7rem;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.pet-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+.pet-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+.pet-info p {
+    margin: 0;
+    color: var(--text-light);
+}
+
+.status {
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    display: inline-block; 
+}
+.status-treatment { background-color: var(--status-treat); }
+.status-healthy { background-color: var(--status-healthy); }
+
+.chip {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.chip-pending {
+    background-color: #e0eef9;
+    color: var(--status-pending);
+}
+
+.turnos-list {
+    margin-top: 30px;
+}
+.turno-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+.turno-time {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    width: 70px;
+    flex-shrink: 0;
+    text-align: center;
+    background-color: var(--bg-color);
+    padding: 10px 5px;
+    border-radius: 8px;
+    line-height: 1.4;
+}
+.turno-info { flex-grow: 1; }
+.turno-info h4 { margin: 0 0 5px 0; font-size: 1.2rem; }
+.turno-info p { margin: 0; color: var(--text-light); }
+.turno-actions { display: flex; align-items: center; gap: 15px; }
+
+/* ========================
+   Formulario de Turno (solicitar-turno.html)
+   ======================== */
+.form-container {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+}
+.form-section h3 {
+    margin: 0 0 20px 0;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box; 
+    background-color: #fdfdfd;
+}
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.submit-button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* ========================
+   Media Queries (Móvil)
+   ======================== */
+@media (max-width: 992px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        transform: translateX(-100%);
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    }
+    .sidebar.is-open {
+        transform: translateX(0);
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .main-header h2 {
+        font-size: 1.5rem;
+    }
+    .main-header p {
+        display: none;
+    }
+    .header-title {
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+    .main-header h2 {
+        font-size: 1.3rem;
+    }
+    .turno-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .turno-time {
+        width: 100%;
+    }
+    .turno-actions {
+        width: 100%;
+    }
+    .pet-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .form-container {
+        padding: 20px;
+    }
+}

@@ -14,18 +14,19 @@
         
         <nav class="sidebar">
             <div class="sidebar-header">
-                <img src="logo.png" alt="Logo de VetSafe">
-                <h1>VetSafe</h1>
+                <img src="logo.png" alt="Logo VetSafe" class="sidebar-logo">
+                <span class="sidebar-title">VetSafe</span>
             </div>
-            <ul>
-                <li class="active">
+            
+            <ul class="sidebar-menu">
+                <li class="active"> 
                     <a href="agenda.html">
-                        <span class="material-icons">today</span> Agenda / Turnos
+                        <span class="material-icons">apps</span> Agenda / Turnos
                     </a>
                 </li>
                 <li>
                     <a href="pacientes.html">
-                        <span class="material-icons">person_search</span> Pacientes
+                        <span class="material-icons">group</span> Pacientes
                     </a>
                 </li>
                 <li>
@@ -34,16 +35,18 @@
                     </a>
                 </li>
             </ul>
-            <div class="sidebar-footer">
-                <a href="index.html" class="portal-link">
-                   <span class="material-icons">logout</span>
-                   Volver al Portal
-                </a>
-           </div>
-            <div class="sidebar-user">
-                <span class="material-icons">account_circle</span>
-                <span>Dra. Maria Gomez</span>
-            </div>
+            
+            <ul class="sidebar-menu-bottom">
+                <li>
+                    <a href="#"> <span class="material-icons">person</span> Dra. Maria Gomez
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="portal-link">
+                        <span class="material-icons">settings</span> Volver al Portal
+                    </a>
+                </li>
+            </ul>
         </nav>
 
         <main class="main-content">

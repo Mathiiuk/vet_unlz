@@ -53,56 +53,110 @@ body {
     overflow-y: auto;
 }
 
-/* ========================
-   Barra Lateral (Sidebar)
-   ======================== */
+/* =================================================== */
+/* NUEVOS ESTILOS DEL SIDEBAR (Basado en la imagen) */
+/* =================================================== */
+
+/* Variables de color de la imagen */
+:root {
+    --sidebar-bg: #233B36; /* Verde oscuro de la imagen */
+    --sidebar-text-logo: #9EF0D6; /* Verde claro del texto "VetSafe" */
+    --sidebar-text-link: #EAEAEA; /* Texto de enlace normal */
+    --sidebar-text-active: #FFFFFF; /* Texto de enlace activo */
+    --sidebar-active-bg: #3F635B; /* Fondo del enlace activo */
+    --sidebar-border: #3F635B; /* Borde separador */
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg); /* Verde Oscuro de la imagen */
+    color: var(--sidebar-text-link);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-out; 
+}
+
 .sidebar-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px; /* Espacio entre logo y texto */
     padding: 25px 20px;
-    border-bottom: 1px solid #3c6e40; /* Tono de verde más oscuro */
+    border-bottom: 1px solid var(--sidebar-border); 
 }
-.sidebar-header .material-icons { font-size: 2.5rem; }
-.sidebar-header h1 { margin: 0; font-size: 1.6rem; }
-.sidebar-header img { 
+
+.sidebar-logo { 
     height: 40px; 
-    width: auto;
+    width: 40px; 
+    object-fit: contain; /* Asegura que el logo se vea bien */
 }
 
-.sidebar ul {
+.sidebar-title { 
+    margin: 0; 
+    font-size: 1.8rem; 
+    font-weight: 700;
+    color: var(--sidebar-text-logo); /* Verde claro del logo */
+    /* Efecto de "brillo" como en la imagen */
+    text-shadow: 0 0 10px rgba(158, 240, 214, 0.4);
+}
+
+/* Estilo para AMBOS menús (principal y de abajo) */
+.sidebar-menu,
+.sidebar-menu-bottom {
     list-style: none;
-    padding: 20px 0;
+    padding: 0;
     margin: 0;
-    flex-grow: 1;
 }
 
-.sidebar li a {
+/* Espacio entre los menús */
+.sidebar-menu {
+    padding-top: 15px;
+}
+
+/* Empuja el menú de abajo... abajo */
+.sidebar-menu-bottom {
+    margin-top: auto; /* La magia para empujar al fondo */
+    padding-bottom: 10px;
+}
+
+/* Estilo de todos los <a> dentro de los menús */
+.sidebar-menu li a,
+.sidebar-menu-bottom li a {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    color: #c0c7c0; /* Tono de gris/verde claro */
+    gap: 16px; /* Espacio entre ícono y texto */
+    padding: 16px 20px;
+    color: var(--sidebar-text-link); /* Texto de enlace normal */
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
-    border-left: 4px solid transparent;
+    font-size: 1rem;
+    border-left: 4px solid transparent; /* Borde de activo (oculto) */
 }
-.sidebar li a:hover {
-    background-color: #2b612e; /* Verde más oscuro al pasar el ratón */
-    color: white;
+
+.sidebar-menu li a:hover,
+.sidebar-menu-bottom li a:hover {
+    background-color: var(--sidebar-active-bg); /* Fondo al pasar el ratón */
+    color: var(--sidebar-text-active);
 }
-.sidebar li.active a {
-    background-color: #2b612e; /* Verde más oscuro para activo */
-    color: white;
-    border-left-color: var(--primary-color); /* Verde principal del logo */
+
+/* Estilo específico para el link ACTIVO */
+.sidebar-menu li.active a {
+    background-color: var(--sidebar-active-bg); /* Fondo del activo */
+    color: var(--sidebar-text-active);
+    border-left-color: var(--sidebar-text-logo); /* Borde verde claro */
+    font-weight: 600;
 }
-.sidebar-user {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
-    border-top: 1px solid #3c6e40; /* Tono de verde más oscuro */
+
+.sidebar .material-icons {
+    font-size: 24px;
+    width: 24px; /* Fija el ancho del ícono */
+}
+
+/* Separador para los links de abajo */
+.sidebar-menu-bottom {
+    padding-top: 10px;
+    border-top: 1px solid var(--sidebar-border);
 }
 
 /* ========================
