@@ -4,31 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a VetSafe</title>
-    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <link rel="icon" href="logo.png" type="image/png">
     <link rel="stylesheet" href="style-portal.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+
     <div class="portal-container">
         <header class="portal-header">
             <img src="logo.png" alt="Logo de VetSafe" class="main-logo">
             <h1>Bienvenido a VetSafe</h1>
-            <p>Por favor, selecciona tu punto de acceso.</p>
         </header>
 
-        <div class="choice-wrapper">
-            <a href="agenda.html" class="choice-card">
-                <span class="material-icons">admin_panel_settings</span>
-                <h2>Panel Interno</h2>
-                <p>Acceder como veterinario o administrador.</p>
-            </a>
+        <div class="login-card">
             
-            <a href="login-cliente.html" class="choice-card">
-                <span class="material-icons">person</span>
-                <h2>Portal de Cliente</h2>
-                <p>Acceder como cliente para ver tus mascotas y turnos.</p>
-            </a>
+            <div class="login-tabs">
+                <button class="tab-btn active" data-tab="cliente">
+                    <span class="material-icons">person</span>
+                    Soy Cliente
+                </button>
+                <button class="tab-btn" data-tab="admin">
+                    <span class="material-icons">admin_panel_settings</span>
+                    Soy Veterinario
+                </button>
+            </div>
+
+            <div class="login-form-content">
+
+                <form id="form-cliente" class="login-form active">
+                    <div class="form-group">
+                        <label for="client-email">Email de Cliente</label>
+                        <input type="email" id="client-email" value="ana.martinez@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-pass">Contraseña</label>
+                        <input type="password" id="client-pass" value="123456">
+                    </div>
+                    <a href="dashboard-cliente.html" class="button-primary">Ingresar como Cliente</a>
+                </form>
+
+                <form id="form-admin" class="login-form">
+                    <div class="form-group">
+                        <label for="admin-email">Email de Veterinario</label>
+                        <input type="email" id="admin-email" value="dra.gomez@vetsafe.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-pass">Contraseña</label>
+                        <input type="password" id="admin-pass" value="123456">
+                    </div>
+                    <a href="agenda.html" class="button-primary">Ingresar como Veterinario</a>
+                </form>
+
+            </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const formContents = document.querySelectorAll('.login-form');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Quita 'active' de todos los botones y formularios
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    formContents.forEach(form => form.classList.remove('active'));
+
+                    // Añade 'active' al botón clickeado
+                    button.classList.add('active');
+                    
+                    // Muestra el formulario correspondiente
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(`form-${tabId}`).classList.add('active');
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
