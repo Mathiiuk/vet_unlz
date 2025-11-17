@@ -1,9 +1,9 @@
 /* =================================================== */
-/* CSS del Portal de Cliente (Diseño Híbrido/Moderno) */
-/* =================================================== */
+/* CSS del Portal de Cliente (COMPLETO) */
+/* =Imágenes a esta conversacióng ================================= */
 
 /* ========================
-   Variables de Color (Paleta Moderna + Sidebar Oscuro)
+   Variables de Color
    ======================== */
    :root {
     /* Colores primarios (del logo) */
@@ -34,6 +34,7 @@
     /* Colores de Estado */
     --status-treat: #f39c12; 
     --status-healthy: #2ecc71;
+    --status-low: #e74c3c; /* Usado para 'Cerrado' */
     --status-pending: #3498db; 
 }
 
@@ -49,7 +50,7 @@ body {
 }
 
 /* ========================
-   Estilos de Login (login-cliente.html)
+   Estilos de Login (index.html)
    ======================== */
 .login-body {
     display: flex;
@@ -57,95 +58,26 @@ body {
     align-items: center;
     min-height: 100vh;
 }
-
-.login-container {
-    background-color: var(--card-bg);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    border: 1px solid var(--border-color);
-}
-
-.login-logo {
-    width: 100px;
-    margin-bottom: 20px;
-}
-
-.login-container h2 {
-    color: var(--text-color-dark);
-    margin-top: 0;
-}
-
-.login-form .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-/* Estilo de formulario SaaS moderno */
-.login-form label,
-.form-group label {
-    display: block;
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: var(--text-color-light);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-}
-
-.login-form input[type="email"],
-.login-form input[type="password"] {
-    width: 100%;
-    padding: 12px 15px;
-    font-size: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-sizing: border-box; 
-    background-color: var(--bg-color); /* Fondo del input coincide con el body */
-}
-
-.login-form .button-primary {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    margin-top: 20px;
-}
-.login-form .button-primary:hover {
-    background-color: var(--primary-color-dark);
-}
-
-.back-link {
-    display: block;
-    margin-top: 20px;
-    color: var(--text-color-light);
-    font-size: 0.9rem;
-}
+/* (Los estilos del login.html van aquí, si usas este mismo CSS) */
+/* Por ahora, nos centramos en el dashboard */
 
 
 /* ========================
    Layout del Dashboard
    ======================== */
-.app-layout {
+   .app-layout {
     display: flex;
-    min-height: 100vh;
+    height: 100vh; /* Fija la altura total al 100% de la pantalla */
+    overflow: hidden; /* Evita que la página completa haga scroll */
 }
 
 .main-content {
     flex-grow: 1;
     padding: 30px;
-    overflow-y: auto;
     background-color: var(--bg-color); /* Fondo principal claro */
+    height: 100vh; /* Fija la altura del contenido */
+    overflow-y: auto; /* PERMITE EL SCROLL SOLO AQUÍ */
+    box-sizing: border-box; /* Asegura que el padding no rompa el layout */
 }
 
 /* ========================
@@ -157,48 +89,43 @@ body {
     color: var(--sidebar-text-link);
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Esto ya evita que se agrande a lo ancho */
     transition: transform 0.3s ease-out; 
+    height: 100vh; /* Fija la altura del sidebar a la pantalla */
 }
 
+/* --- ESTILO DEL HEADER DEL SIDEBAR (Logo que ocupa todo) --- */
 .sidebar-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    /* El padding da el espacio en los bordes */
-    
+    padding: 30px 20px; 
     border-bottom: 1px solid var(--sidebar-border, #3F635B); 
     margin-bottom: 15px;
-    box-sizing: border-box; /* Importante */
+    box-sizing: border-box;
 }
                 
 .sidebar-logo-full { 
-    /* ESTA ES LA LÍNEA MÁGICA: */
-    width: 100%; /* La imagen se expande al 100% del contenedor (restando el padding) */
-    
-    /* Ajusta la altura máxima para que no sea demasiado alto */
-    max-height: 100px; /* Puedes cambiar este valor (ej: 80px, 120px) */
-    
-    object-fit: contain; /* Mantiene la proporción y evita que se corte */
+    width: 100%; /* La imagen se expande al 100% */
+    max-height: 100px; /* Altura máxima */
+    object-fit: contain; /* Mantiene la proporción */
 }
+/* --- FIN DEL HEADER --- */
 
 
+/* --- ESTILO DE LOS MENÚS --- */
 .sidebar-menu,
 .sidebar-menu-bottom {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.sidebar-menu {
-    padding-top: 15px;
+    flex-shrink: 0; /* Evita que estos menús se encojan */
 }
 
 .sidebar-menu-bottom {
-    margin-top: auto; 
-    padding-bottom: 10px;
+    margin-top: auto; /* Empuja este menú al fondo */
     padding-top: 10px;
+    padding-bottom: 10px;
     border-top: 1px solid var(--sidebar-border);
 }
 
@@ -222,7 +149,6 @@ body {
     color: var(--sidebar-text-active);
 }
 
-/* Link ACTIVO (Oscuro) */
 .sidebar-menu li.active a,
 .sidebar-menu-bottom li.active a {
     background-color: var(--sidebar-active-bg); 
@@ -234,6 +160,71 @@ body {
 .sidebar .material-icons {
     font-size: 24px;
     width: 24px;
+}
+
+/* --- Estilos para la lista de Mascotas en el Sidebar --- */
+.sidebar-pets {
+    padding: 10px 20px;
+    flex-grow: 1; /* Se expande para llenar el espacio */
+    overflow-y: auto; /* Permite scroll si hay muchas mascotas */
+    border-top: 1px solid var(--sidebar-border);
+    border-bottom: 1px solid var(--sidebar-border);
+    margin: 15px 0;
+    min-height: 100px; /* Asegura un espacio mínimo */
+}
+
+.sidebar-pets-title {
+    color: var(--sidebar-text-logo); /* Texto verde claro */
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 10px 0 10px 4px;
+    opacity: 0.8;
+}
+
+.sidebar-pets-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-pets-list li a {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    padding: 8px; /* Padding para el hover */
+    color: var(--sidebar-text-link); 
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    border-radius: 6px;
+}
+
+.sidebar-pets-list li a:hover {
+    background-color: var(--sidebar-active-bg); 
+    color: var(--sidebar-text-active);
+}
+
+.pet-avatar {
+    width: 30px;
+    height: 30px;
+    min-width: 30px; /* Evita que se encoja */
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.pet-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* ========================
@@ -255,7 +246,7 @@ body {
 }
 .main-header p {
     margin: 0;
-    color: var(--text-color-light);
+    color: var(--text-light);
     font-size: 1.1rem;
 }
 
@@ -273,19 +264,83 @@ body {
     display: block; 
 }
 
-/* ========================
-   Tarjetas (Dashboard y Perfil) - Estilo Moderno
-   ======================== */
-.pet-card,
-.turno-card,
-.form-container {
-    background-color: var(--card-bg);
-    border-radius: 12px; /* Esquinas redondeadas */
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
-    padding: 25px;
+/* =================================== */
+/* NUEVA SECCIÓN DE SUCURSALES (AÑADIDA) */
+/* =================================== */
+.sucursal-status-container {
+    margin-bottom: 30px;
 }
 
+.sucursal-status-container h3 {
+    font-size: 1.7rem;
+    color: var(--text-color-dark);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-top: 0; /* Asegura que no haya doble margen */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sucursal-status-list {
+    display: grid;
+    /* Crea 2 columnas si hay espacio, sino 1 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+}
+
+.sucursal-status-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    /* Borde de color para el estado */
+    border-left: 5px solid transparent; 
+}
+
+/* Estilos de Abierto/Cerrado */
+.sucursal-status-card.status-open {
+    border-left-color: var(--status-healthy); /* Verde */
+}
+.sucursal-status-card.status-closed {
+    border-left-color: var(--status-low); 
+}
+
+.sucursal-name,
+.sucursal-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.sucursal-name {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.sucursal-status {
+    font-size: 0.95rem;
+    text-align: right;
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+/* Colores para los íconos y texto de estado */
+.sucursal-status-card.status-open .sucursal-status {
+    color: var(--status-healthy);
+}
+.sucursal-status-card.status-closed .sucursal-status {
+    color: var(--status-low);
+}
+
+/* ========================
+   Dashboard de Cliente (Mascotas y Turnos)
+   ======================== */
 .patient-card-list h3,
 .turnos-list h3 {
     font-size: 1.7rem;
@@ -295,9 +350,14 @@ body {
 }
 
 .pet-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
     margin-bottom: 15px;
 }
 .pet-info h4 {
@@ -307,7 +367,7 @@ body {
 }
 .pet-info p {
     margin: 0;
-    color: var(--text-color-light);
+    color: var(--text-light);
 }
 
 .status {
@@ -336,6 +396,10 @@ body {
     margin-top: 30px;
 }
 .turno-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     padding: 20px;
@@ -355,13 +419,17 @@ body {
 }
 .turno-info { flex-grow: 1; }
 .turno-info h4 { margin: 0 0 5px 0; font-size: 1.2rem; }
-.turno-info p { margin: 0; color: var(--text-color-light); }
+.turno-info p { margin: 0; color: var(--text-light); }
 .turno-actions { display: flex; align-items: center; gap: 15px; }
 
 /* ========================
-   Formulario de Turno y Perfil (Estilo Moderno)
+   Formularios (Perfil, Solicitar Turno)
    ======================== */
 .form-container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
     padding: 30px;
 }
 .form-section h3 {
@@ -373,6 +441,14 @@ body {
 }
 .form-group {
     margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-color-light);
+    margin-bottom: 8px;
+    text-transform: uppercase;
 }
 .form-group input[type="text"],
 .form-group input[type="tel"],
@@ -386,7 +462,7 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     box-sizing: border-box; 
-    background-color: var(--bg-color); /* Input coincide con el fondo */
+    background-color: #fdfdfd;
 }
 .form-group input[readonly] {
     background-color: #eee;
@@ -397,7 +473,7 @@ body {
 }
 
 .submit-button {
-    width: auto; /* El botón ya no ocupa el 100% */
+    width: auto;
     background-color: var(--primary-color);
     color: white;
     padding: 12px 25px;
@@ -407,17 +483,15 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
+    margin-top: 10px;
 }
 .submit-button:hover {
-    background-color: var(--primary-color-dark);
+    background-color: var(--secondary-color);
 }
 
-/* ========================
-   Layout de Perfil (dos columnas)
-   ======================== */
 .profile-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
@@ -453,7 +527,7 @@ body {
         line-height: 1.2;
     }
     .profile-layout {
-        grid-template-columns: 1fr; /* Apila los formularios en tablets */
+        grid-template-columns: 1fr; 
         gap: 25px;
     }
 }
@@ -486,75 +560,15 @@ body {
         padding: 20px;
     }
     .submit-button {
-        width: 100%; /* El botón vuelve a ser 100% en móvil */
+        width: 100%; 
     }
-}
-
-/* ======================================= */
-/* AÑADIR ESTO AL FINAL DE style-cliente.css */
-/* ======================================= */
-
-/* --- Estilos para la nueva lista de Mascotas en el Sidebar --- */
-
-.sidebar-pets {
-    padding: 10px 20px;
-    /* Se expande para llenar el espacio entre los menús */
-    flex-grow: 1; 
-    overflow-y: auto; /* Permite scroll si hay muchas mascotas */
-}
-
-.sidebar-pets-title {
-    color: var(--sidebar-text-logo); /* Texto verde claro */
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 10px 0 10px 4px;
-    opacity: 0.8;
-}
-
-.sidebar-pets-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar-pets-list li a {
-    display: flex;
-    align-items: center;
-    gap: 12px; 
-    padding: 10px 0;
-    color: var(--sidebar-text-link); 
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    font-size: 0.95rem;
-    border-radius: 6px;
-    padding: 8px; /* Padding para el hover */
-}
-
-.sidebar-pets-list li a:hover {
-    background-color: var(--sidebar-active-bg); 
-    color: var(--sidebar-text-active);
-}
-
-.pet-avatar {
-    width: 30px;
-    height: 30px;
-    min-width: 30px; /* Evita que se encoja */
-    border-radius: 50%;
-    background-color: var(--sidebar-active-bg);
-    color: var(--sidebar-text-active);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.pet-name {
-    /* Evita que el texto se rompa */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    .sucursal-status-card {
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 10px;
+    }
+    .sucursal-status {
+        width: 100%;
+        text-align: left; 
+    }
 }

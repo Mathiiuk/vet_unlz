@@ -60,9 +60,38 @@
                 </button>
             </header>
 
+            <section class="sucursal-status-container">
+                <h3><span class="material-icons">emergency_home</span> Sucursales de Guardia</h3>
+                <div class="sucursal-status-list">
+                    
+                    <div class="sucursal-status-card status-open">
+                        <div class="sucursal-name">
+                            <span class="material-icons">all_inclusive</span>
+                            Hospital C.A.B.A.
+                        </div>
+                        <div class="sucursal-status">
+                            <span class="material-icons">check_circle</span>
+                            Abierto (24hs)
+                        </div>
+                    </div>
+
+                    <div class="sucursal-status-card status-closed">
+                        <div class="sucursal-name">
+                            <span class="material-icons">watch_later</span>
+                            Consultorio Córdoba
+                        </div>
+                        <div class="sucursal-status">
+                            <span class="material-icons">cancel</span>
+                            Cerrado (Abre 09:00)
+                        </div>
+                    </div>
+
+                </div>
+            </section>
             <section class="patient-card-list">
                 <h3>Mis Mascotas</h3>
-                <div id="dashboard-pet-list"></div> 
+                <div id="dashboard-pet-list">
+                    </div> 
             </section>
 
             <section class="turnos-list">
@@ -81,6 +110,7 @@
             </section>
         </main>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
