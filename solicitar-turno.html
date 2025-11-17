@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-
     <div class="app-layout">
         
         <nav class="sidebar">
@@ -30,6 +29,12 @@
                     </a>
                 </li>
             </ul>
+
+            <div class="sidebar-pets">
+                <h4 class="sidebar-pets-title">Mis Mascotas</h4>
+                <ul class="sidebar-pets-list" id="sidebar-pets-list">
+                    </ul>
+            </div>
             
             <ul class="sidebar-menu-bottom">
                 <li>
@@ -67,7 +72,6 @@
                                 <option value="1">Fido (Labrador)</option>
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="turno-sucursal">Sucursal</label>
                             <select id="turno-sucursal">
@@ -75,7 +79,6 @@
                                 <option>Sucursal Córdoba (Av. Colón 500)</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
                             <label for="turno-tipo">Motivo de la visita</label>
                             <select id="turno-tipo">
@@ -85,7 +88,6 @@
                                 <option>Cirugía</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
                             <label for="turno-obs">Describa brevemente el motivo</label>
                             <textarea id="turno-obs" rows="4" placeholder="Ej: Vómitos, control anual, etc..."></textarea>
@@ -97,10 +99,8 @@
                     </button>
                 </form>
             </div>
-
         </main>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>

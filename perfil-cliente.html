@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-
     <div class="app-layout">
         
         <nav class="sidebar">
@@ -30,10 +29,15 @@
                     </a>
                 </li>
             </ul>
+
+            <div class="sidebar-pets">
+                <h4 class="sidebar-pets-title">Mis Mascotas</h4>
+                <ul class="sidebar-pets-list" id="sidebar-pets-list">
+                    </ul>
+            </div>
             
             <ul class="sidebar-menu-bottom">
-                <li class="active">
-                    <a href="perfil-cliente.html">
+                <li class="active"> <a href="perfil-cliente.html">
                         <span class="material-icons">person</span> Ana Martinez
                     </a>
                 </li>
@@ -56,7 +60,6 @@
             </header>
 
             <div class="profile-layout">
-
                 <div class="form-container">
                     <form class="turno-form">
                         <div class="form-section">
@@ -83,16 +86,16 @@
                 </div>
 
                 <div class="form-container">
-                    <form class="turno-form">
+                    <form class="turno-form" id="form-agregar-mascota">
                         <div class="form-section">
                             <h3>Agregar Nueva Mascota</h3>
                             <div class="form-group">
                                 <label for="pet-nombre">Nombre de la Mascota</label>
-                                <input type="text" id="pet-nombre" placeholder="Ej: Rocket">
+                                <input type="text" id="pet-nombre" placeholder="Ej: Rocket" required>
                             </div>
                             <div class="form-group">
                                 <label for="pet-especie">Especie</label>
-                                <select id="pet-especie">
+                                <select id="pet-especie" required>
                                     <option value="" disabled selected>Seleccione...</option>
                                     <option value="1">Canino</option>
                                     <option value="2">Felino</option>
@@ -119,10 +122,9 @@
                         <button type="submit" class="submit-button">Agregar Mascota</button>
                     </form>
                 </div>
-
-            </div> </main>
+            </div> 
+        </main>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>

@@ -6,8 +6,7 @@
     <title>Pacientes - VetSafe</title>
     <link rel="stylesheet" href="style-interno.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="logo2.png" type="image/png">
-</head>
+    <link rel="icon" href="logo.png" type="image/png"> </head>
 <body>
 
     <div class="app-layout">
@@ -38,7 +37,8 @@
             
             <ul class="sidebar-menu-bottom">
                 <li>
-                    <a href="#"> <span class="material-icons">person</span> Dra. Maria Gomez
+                    <a href="#">
+                        <span class="material-icons">person</span> Dra. Maria Gomez
                     </a>
                 </li>
                 <li>
@@ -48,6 +48,7 @@
                 </li>
             </ul>
         </nav>
+
         <main class="main-content">
             <header class="main-header">
                 <div class="header-title">
@@ -86,7 +87,7 @@
                             <td>Juan Perez</td>
                             <td>11-5555-1001</td>
                             <td><span class="status status-healthy">Saludable</span></td>
-                            <td><a href="#" class="button-secondary">Ver Historial</a></td>
+                            <td><button class="button-secondary open-modal-btn" data-patient-name="Fido">Ver Historial</button></td>
                         </tr>
                         <tr>
                             <td>2</td>
@@ -96,7 +97,7 @@
                             <td>Juan Perez</td>
                             <td>11-5555-1001</td>
                             <td><span class="status status-healthy">Saludable</span></td>
-                            <td><a href="#" class="button-secondary">Ver Historial</a></td>
+                            <td><button class="button-secondary open-modal-btn" data-patient-name="Milo">Ver Historial</button></td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -106,7 +107,7 @@
                             <td>Ana Martinez</td>
                             <td>11-5555-1004</td>
                             <td><span class="status status-treatment">En Tratamiento</span></td>
-                            <td><a href="historial.html" class="button-secondary">Ver Historial</a></td>
+                            <td><button class="button-secondary open-modal-btn" data-patient-name="Luna">Ver Historial</button></td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -116,7 +117,7 @@
                             <td>Carlos Sanchez</td>
                             <td>11-5555-1005</td>
                             <td><span class="status status-healthy">Saludable</span></td>
-                            <td><a href="#" class="button-secondary">Ver Historial</a></td>
+                            <td><button class="button-secondary open-modal-btn" data-patient-name="Max">Ver Historial</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -124,6 +125,50 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <div class="modal-backdrop" id="history-modal">
+        <div class="modal">
+            
+            <header class="modal-header">
+                <h3 id="modal-patient-name">Historial de (Paciente)</h3>
+                <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+            </header>
+            
+            <div class="modal-body">
+                <div class="visit-card">
+                    <div class="visit-header">
+                        <span class="material-icons">healing</span>
+                        <div class="visit-title">
+                            <h4>Atención de Guardia</h4>
+                            <span class="visit-date">11 de Noviembre 2025 - 15:30 hs</span>
+                        </div>
+                        <span class="visit-type type-guardia">Guardia</span>
+                    </div>
+                    <div class="visit-body">
+                        <div class="visit-section">
+                            <strong>Observaciones:</strong> Vómitos. Posible intoxicación.
+                        </div>
+                        <div class="visit-section treatment-section">
+                            <strong>Tratamiento:</strong> Desparasitación interna y dieta blanda.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visit-card">
+                    <div class="visit-header">
+                        <span class="material-icons">check_circle_outline</span>
+                        <div class="visit-title">
+                            <h4>Consulta General</h4>
+                            <span class="visit-date">15 de Enero 2025 - 10:00 hs</span>
+                        </div>
+                        <span class="visit-type type-consulta">Consulta</span>
+                    </div>
+                     <div class="visit-body">
+                        <div class="visit-section">
+                            <strong>Observaciones:</strong> Control anual. Peso estable.
+                        </div>
+                    </div>
+                </div>
+                
+            </div> </div> </div> <script src="script.js"></script>
 </body>
 </html>

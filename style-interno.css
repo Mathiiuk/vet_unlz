@@ -561,3 +561,92 @@ body {
     }
 
 }
+
+/* ======================================= */
+/* AÑADIR ESTO AL FINAL DE style-interno.css */
+/* ======================================= */
+
+/* --- Estilos del Modal de Historial --- */
+
+.modal-backdrop {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+    
+    /* Para centrar el modal */
+    align-items: center;
+    justify-content: center;
+    
+    /* Animación suave */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.is-visible {
+    display: flex; /* Mostrar */
+    opacity: 1;
+}
+
+.modal {
+    background-color: var(--bg-color, #ecebe6); /* Usa el color de fondo claro */
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh; /* Límite de altura */
+    display: flex;
+    flex-direction: column;
+    
+    /* Animación de zoom */
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-backdrop.is-visible .modal {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--border-color, #d0d0d0);
+    background-color: #fff;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--secondary-color, #233B36);
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-light, #7a7a7a);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+.modal-close-btn:hover {
+    color: var(--text-color, #444);
+}
+
+.modal-body {
+    padding: 25px;
+    overflow-y: auto; /* Scroll si el contenido es muy largo */
+}
+
+/* REUTILIZACIÓN DE ESTILOS:
+   Los estilos para .visit-card, .visit-header, etc.,
+   ya deberían estar en tu style-interno.css.
+   Si no lo están, avísame, pero deberían
+   funcionar automáticamente.
+*/

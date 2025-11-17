@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-
     <div class="app-layout">
         
         <nav class="sidebar">
@@ -30,6 +29,12 @@
                     </a>
                 </li>
             </ul>
+
+            <div class="sidebar-pets">
+                <h4 class="sidebar-pets-title">Mis Mascotas</h4>
+                <ul class="sidebar-pets-list" id="sidebar-pets-list">
+                    </ul>
+            </div>
             
             <ul class="sidebar-menu-bottom">
                 <li>
@@ -58,21 +63,7 @@
 
             <section class="patient-card-list">
                 <h3>Mis Mascotas</h3>
-                <div class="pet-card">
-                    <div class="pet-info">
-                        <h4>Luna (ID: 3)</h4>
-                        <p>Canino - Bulldog Francés - Hembra</p>
-                    </div>
-                    <span class="status status-treatment">En Tratamiento</span>
-                </div>
-                
-                <div class="pet-card">
-                    <div class="pet-info">
-                        <h4>Fido (ID: 1) - (Simulado)</h4>
-                        <p>Canino - Labrador - Macho</p>
-                    </div>
-                    <span class="status status-healthy">Saludable</span>
-                </div>
+                <div id="dashboard-pet-list"></div> 
             </section>
 
             <section class="turnos-list">
@@ -90,9 +81,7 @@
                 </div>
             </section>
         </main>
-
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>

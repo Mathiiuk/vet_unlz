@@ -488,3 +488,72 @@ body {
         width: 100%; /* El botón vuelve a ser 100% en móvil */
     }
 }
+
+/* ======================================= */
+/* AÑADIR ESTO AL FINAL DE style-cliente.css */
+/* ======================================= */
+
+/* --- Estilos para la nueva lista de Mascotas en el Sidebar --- */
+
+.sidebar-pets {
+    padding: 10px 20px;
+    /* Se expande para llenar el espacio entre los menús */
+    flex-grow: 1; 
+    overflow-y: auto; /* Permite scroll si hay muchas mascotas */
+}
+
+.sidebar-pets-title {
+    color: var(--sidebar-text-logo); /* Texto verde claro */
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 10px 0 10px 4px;
+    opacity: 0.8;
+}
+
+.sidebar-pets-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-pets-list li a {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    padding: 10px 0;
+    color: var(--sidebar-text-link); 
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    padding: 8px; /* Padding para el hover */
+}
+
+.sidebar-pets-list li a:hover {
+    background-color: var(--sidebar-active-bg); 
+    color: var(--sidebar-text-active);
+}
+
+.pet-avatar {
+    width: 30px;
+    height: 30px;
+    min-width: 30px; /* Evita que se encoja */
+    border-radius: 50%;
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-text-active);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.pet-name {
+    /* Evita que el texto se rompa */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
