@@ -77,18 +77,30 @@ body {
     transition: transform 0.3s ease-out; 
 }
 
+/* --- CSS PARA EL LOGO-ESCUDO GRANDE Y CENTRADO --- */
+                
+/* --- CSS CORREGIDO PARA QUE EL LOGO OCUPE TODO EL CONTENEDOR --- */
+                
 .sidebar-header {
     display: flex;
     align-items: center;
-    gap: 12px; /* Espacio entre logo y texto */
-    padding: 25px 20px;
-    border-bottom: 1px solid var(--sidebar-border); 
+    justify-content: center;
+    
+    /* El padding da el espacio en los bordes */
+    
+    border-bottom: 1px solid var(--sidebar-border, #3F635B); 
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Importante */
 }
-
-.sidebar-logo { 
-    height: 40px; 
-    width: 40px; 
-    object-fit: contain; /* Asegura que el logo se vea bien */
+                
+.sidebar-logo-full { 
+    /* ESTA ES LA LÍNEA MÁGICA: */
+    width: 100%; /* La imagen se expande al 100% del contenedor (restando el padding) */
+    
+    /* Ajusta la altura máxima para que no sea demasiado alto */
+    max-height: 100px; /* Puedes cambiar este valor (ej: 80px, 120px) */
+    
+    object-fit: contain; /* Mantiene la proporción y evita que se corte */
 }
 
 .sidebar-title { 
